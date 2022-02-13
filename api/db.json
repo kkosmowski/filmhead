@@ -2,11 +2,142 @@
   "movies": [
     {
       "id": 1,
-      "title": "Shrek"
+      "title": "Shrek",
+      "description": "A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.",
+      "directors": [
+        {
+          "id": 1,
+          "firstName": "Vicky",
+          "lastName": "Jenson",
+          "birthday": "1960-03-04",
+          "gender": "female"
+        },
+        {
+          "id": 2,
+          "firstName": "Andrew",
+          "lastName": "Adamson",
+          "birthday": "1966-12-01",
+          "gender": "male"
+        }
+      ],
+      "genres": [
+        "adventure",
+        "animation",
+        "comedy",
+        "family",
+        "fantasy"
+      ],
+      "releaseDate": "2001-07-13",
+      "staring": [
+        {
+          "id": 3,
+          "firstName": "Michael",
+          "middleName": "John",
+          "lastName": "Myers",
+          "birthday": "1963-05-25",
+          "gender": "male"
+        },
+        {
+          "id": 4,
+          "firstName": "Eddie",
+          "lastName": "Murphy",
+          "birthday": "1961-04-03",
+          "gender": "male"
+        },
+        {
+          "id": 5,
+          "firstName": "Cameron",
+          "lastName": "Diaz",
+          "birthday": "1972-08-30",
+          "gender": "female"
+        },
+        {
+          "id": 6,
+          "firstName": "Chris",
+          "lastName": "Miller",
+          "birthday": "1968-01-20",
+          "gender": "male"
+        },
+        {
+          "id": 7,
+          "firstName": "John",
+          "lastName": "Lithgow",
+          "birthday": "1945-10-19",
+          "gender": "male"
+        },
+        {
+          "id": 8,
+          "firstName": "Antonio",
+          "lastName": "Banderas",
+          "birthday": "1960-08-10",
+          "gender": "male"
+        },
+        {
+          "id": 9,
+          "firstName": "Vincent",
+          "lastName": "Cassel",
+          "birthday": "1966-11-23",
+          "gender": "male"
+        }
+      ]
     },
     {
       "id": 2,
-      "title": "The Matrix"
+      "title": "The Matrix",
+      "description": "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
+      "directors": [
+        {
+          "id": 10,
+          "firstName": "Lana",
+          "lastName": "Wachowski",
+          "birthday": "1965-06-21",
+          "gender": "trans"
+        },
+        {
+          "id": 11,
+          "firstName": "Lilly",
+          "lastName": "Wachowski",
+          "birthday": "1967-12-29",
+          "gender": "trans"
+        }
+      ],
+      "genres": [
+        "action",
+        "sci-fi",
+        "thriller"
+      ],
+      "releaseDate": "2001-07-13",
+      "staring": [
+        {
+          "id": 12,
+          "firstName": "Keanu",
+          "lastName": "Reeves",
+          "birthday": "1964-09-02",
+          "gender": "male"
+        },
+        {
+          "id": 13,
+          "firstName": "Carrie",
+          "middleName": "Anne",
+          "lastName": "Moss",
+          "birthday": "1967-08-21",
+          "gender": "female"
+        },
+        {
+          "id": 14,
+          "firstName": "Lawrence",
+          "lastName": "Fishburne",
+          "birthday": "1961-07-30",
+          "gender": "male"
+        },
+        {
+          "id": 15,
+          "firstName": "Hugo",
+          "lastName": "Weaving",
+          "birthday": "1960-04-04",
+          "gender": "male"
+        }
+      ]
     }
   ]
 }
