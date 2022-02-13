@@ -37,6 +37,12 @@
       ],
       "services/*": [
         "services/*"
+      ],
+      "styles/*": [
+        "styles/*"
+      ],
+      "utils/*": [
+        "utils/*"
       ]
     }
   },

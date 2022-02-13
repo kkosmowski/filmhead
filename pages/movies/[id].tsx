@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import { Params } from 'next/dist/server/router';
 
-import Layout from 'components/Layout/Layout';
+import Layout from 'components/Layout';
 import { Movie } from 'domain/movie.interface';
 import getMovie from 'lib/movie/get-movie';
-import fullName from '../../utils/full-name';
+import fullName from 'utils/full-name';
 
 interface DetailsProps {
   movie: Movie;
