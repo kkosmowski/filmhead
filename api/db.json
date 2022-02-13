@@ -1,0 +1,12 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Shrek"
+    },
+    {
+      "id": 2,
+      "title": "The Matrix"
+    }
+  ]
+}
