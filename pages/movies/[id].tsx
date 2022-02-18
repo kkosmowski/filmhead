@@ -2,25 +2,35 @@ import Head from 'next/head';
 import { Params } from 'next/dist/server/router';
 
 import Layout from 'components/Layout';
-import { Movie } from 'domain/movie.interface';
-import getMovie from 'lib/movie/get-movie';
+import { Movie, Person } from 'domain/movie.interface';
+import getMovie from 'lib/movies/get-movie';
 import fullName from 'utils/full-name';
+import getPeople from 'lib/people/get-people';
+import findMoviePeople from 'utils/find-movie-people.util';
 
 interface DetailsProps {
   movie: Movie;
+  people: Person[];
 }
 
 interface RouteParams {
   params: Params;
 }
 
-export const getServerSideProps = async ({ params }: RouteParams): Promise<{ props: DetailsProps }> => ({
-  props: {
-    movie: await getMovie(params.id)
-  }
-});
+export const getServerSideProps = async ({ params }: RouteParams): Promise<{ props: DetailsProps }> => {
+  const movie = await getMovie(params.id); 
 
-const Details = ({ movie }: DetailsProps) => {
+  return {
+    props: {
+      movie,
+      people: await getPeople([...movie.directors, ...movie.cast]),
+    }
+  }
+};
+
+const Details = ({ movie, people }: DetailsProps) => {
+  const [directors, cast] = findMoviePeople(movie, people);
+  
   return (
     <Layout>
       <Head>
@@ -34,15 +44,15 @@ const Details = ({ movie }: DetailsProps) => {
         </p>
         <ul>
           {
-            movie.directors.length === 1
-              ? <li>Director: { fullName(movie.directors[0]) }</li>
-              : <li>Directors: { movie.directors.map(fullName).join(', ') }</li>
+            directors.length === 1
+              ? <li>Director: { fullName(directors[0]) }</li>
+              : <li>Directors: { directors.map(fullName).join(', ') }</li>
           }
           <li>Released: { movie.releaseDate }</li>
           <li>Genres: { movie.genres.join(', ') }</li>
           <li>Staring:</li>
           <ul>
-            { movie.staring.map((actor) => (<li key={ actor.id }>{ fullName(actor) }</li>)) }
+            { cast.map((actor) => (<li key={ actor.id }>{ fullName(actor) }</li>)) }
           </ul>
         </ul>
       </article>

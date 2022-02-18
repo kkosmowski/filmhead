@@ -38,8 +38,8 @@ export interface Movie {
   id: number;
   title: string;
   description: string;
-  directors: Person[];
+  directors: number[];
   genres: Genre[];
   releaseDate: string;
-  staring: Person[];
+  cast: number[];
 }
