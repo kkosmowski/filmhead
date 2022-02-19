@@ -1,16 +1,17 @@
 import { Movie, Person } from 'domain/movie.interface';
 
 const findMoviePeople = (movie: Movie, peopleArray: Person[]): [Person[], Person[]] => {
-  const ids = [...movie.directors, ...movie.cast];
   const people = [...peopleArray];
 
-  for (let i = 0; i < ids.length; i++) {
-    const indexOf = people.findIndex((person) => person.id === ids[i]);
+  const findPersonAndSpliceIt = (id: number): Person => {
+    const indexOf = people.findIndex((person) => person.id === id);
+    return people.splice(indexOf, 1)[0];
   }
 
-  // @todo continue
+  const directors = movie.directors.map(findPersonAndSpliceIt);
+  const cast = movie.cast.map(findPersonAndSpliceIt);
 
-  return [[], []];
+  return [directors, cast];
 };
 
 export default findMoviePeople;
