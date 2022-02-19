@@ -1,4 +1,4 @@
-import { Movie, Person } from 'domain/movie.interface';
+import { Movie, Person, Occupation } from 'domain/movie.interface';
 
 const getRoute = (item: any): string => {
   if (item === null || item === undefined) {
@@ -8,8 +8,9 @@ const getRoute = (item: any): string => {
     throw new Error("Error [getRoute]: item is missing id field");
   }
 
-  if (isPerson(item)) return `/person/${ item.id }`;
-  if (isMovie(item)) return `/movie/${ item.id }`;
+  if (isActor(item)) return `/actors/${ item.id }`;
+  if (isDirector(item)) return `/directors/${ item.id }`;
+  if (isMovie(item)) return `/movies/${ item.id }`;
 
   throw new Error("Error [getRoute]: unknown item type");
 };
@@ -17,9 +18,15 @@ const getRoute = (item: any): string => {
 export default getRoute;
 
 const isPerson = (item: any): item is Person => {
-  const requiredKeys = ['firstName', 'lastName', 'birthday', 'gender'];
+  const requiredKeys = ['firstName', 'lastName', 'birthday', 'gender', 'occupation'];
   return requiredKeys.every(key => key in item);
 };
+
+const isActor = (item: any): item is Person =>
+  isPerson(item) && item.occupation === Occupation.Actor;
+
+const isDirector = (item: any): item is Person =>
+  isPerson(item) && item.occupation === Occupation.Director;
 
 const isMovie = (item: any): item is Movie => {
   const requiredKeys = ['title', 'description', 'directors', 'genres', 'releaseDate', 'cast'];

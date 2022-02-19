@@ -5,12 +5,18 @@ export interface Person {
   lastName: string;
   birthday: string;
   gender: Gender;
+  occupation: Occupation;
 }
 
 export enum Gender {
   Male = 'male',
   Female = 'female',
   Trans = 'trans',
+}
+
+export enum Occupation {
+  Actor = 'actor',
+  Director = 'director',
 }
 
 export enum Genre {
