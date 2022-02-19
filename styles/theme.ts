@@ -6,7 +6,10 @@ const lightTheme = createTheme({
     mode: 'light',
   },
   typography: {
-    fontFamily: '"Nunito Sans", serif'
+    fontFamily: '"Nunito Sans", serif',
+    h1: {
+      fontSize: '3rem'
+    }
   }
 });
 

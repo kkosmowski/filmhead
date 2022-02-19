@@ -11,6 +11,7 @@ import findMoviePeople from 'utils/find-movie-people.util';
 import getRoute from 'utils/get-route';
 import intersperse from 'utils/intersperse';
 import toUpperCase from 'utils/to-upper-case';
+import BackButton from 'components/BackButton';
 
 interface DetailsProps {
   movie: Movie;
@@ -44,6 +45,8 @@ const Details = ({ movie, people }: DetailsProps) => {
       <Head>
         <title>{ movie.title }</title>
       </Head>
+
+      <BackButton label="Back to movies" />
 
       <article>
         <h1>{ movie.title }</h1>

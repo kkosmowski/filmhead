@@ -7,6 +7,7 @@ import fullName from 'utils/full-name';
 import getPerson from 'lib/people/get-person';
 import getMoviesWithDirector from 'lib/movies/get-movies-with-director';
 import listMovies from 'utils/list-movies';
+import BackButton from 'components/BackButton';
 
 interface DetailsProps {
   director: Person;
@@ -36,6 +37,8 @@ const Details = ({ director, movies }: DetailsProps) => {
       <Head>
         <title>{ directorName }</title>
       </Head>
+
+      <BackButton label="Back to directors" />
 
       <article>
         <h1>{ directorName }</h1>

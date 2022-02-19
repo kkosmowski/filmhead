@@ -1,12 +1,11 @@
 import { ReactElement } from 'react';
-import Link from 'next/link';
 
 import { Movie } from 'domain/movie.interface';
-import getRoute from 'utils/get-route';
+import getMovieTitleLink from 'utils/get-movie-title-link';
 
 const listMovies = (movies: Movie[]): ReactElement[] => movies.map(movie => (
   <li key={ movie.id }>
-    <Link href={ getRoute(movie) }>{ movie.title }</Link>
+    { getMovieTitleLink(movie) }
   </li>
 ));
 
